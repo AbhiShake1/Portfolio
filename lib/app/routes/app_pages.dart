@@ -18,11 +18,13 @@ class AppPages {
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
+      curve: Curves.easeInOutCubic,
     ),
     GetPage(
       name: _Paths.PROJECTS,
       page: () => const ProjectsView(),
       binding: ProjectsBinding(),
+      curve: Curves.easeInOutCubic,
     ),
   ];
 }

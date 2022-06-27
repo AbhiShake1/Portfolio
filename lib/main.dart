@@ -16,6 +16,7 @@ void main() async {
       title: "FireFolio",
       initialRoute: AppPages.INITIAL,
       getPages: AppPages.routes,
+      transitionDuration: 1.seconds,
       customTransition: _CustomTransition(),
       theme: ThemeData(
         useMaterial3: true,
@@ -36,35 +37,38 @@ class _CustomTransition extends CustomTransition {
     Animation<double> secondaryAnimation,
     Widget child,
   ) {
-    return Stack(
-      children: [
-        SlideTransition(
-          position: Tween(
-            begin: Offset.zero,
-            end: const Offset(-1, 0),
-          ).animate(animation),
-          child: Transform(
-            transform: Matrix4.identity()
-              ..setEntry(3, 2, .003)
-              ..rotateY(pi / 2 * animation.value),
-            alignment: FractionalOffset.centerRight,
-            child: _routes[_routes.length - 2].page(),
+    return Container(
+      color: Colors.white,
+      child: Stack(
+        children: [
+          SlideTransition(
+            position: Tween(
+              begin: Offset.zero,
+              end: const Offset(-1, 0),
+            ).animate(animation),
+            child: Transform(
+              transform: Matrix4.identity()
+                ..setEntry(3, 2, .002)
+                ..rotateY(pi / 2 * animation.value),
+              alignment: FractionalOffset.centerRight,
+              child: _routes[_routes.length - 2].page(),
+            ),
           ),
-        ),
-        SlideTransition(
-          position: Tween(
-            begin: const Offset(1, 0),
-            end: Offset.zero,
-          ).animate(animation),
-          child: Transform(
-            transform: Matrix4.identity()
-              ..setEntry(3, 2, 0.003)
-              ..rotateY(pi / 2 * (animation.value - 1)),
-            alignment: FractionalOffset.centerLeft,
-            child: child,
-          ),
-        )
-      ],
+          SlideTransition(
+            position: Tween(
+              begin: const Offset(1, 0),
+              end: Offset.zero,
+            ).animate(animation),
+            child: Transform(
+              transform: Matrix4.identity()
+                ..setEntry(3, 2, 0.003)
+                ..rotateY(pi / 2 * (animation.value - 1)),
+              alignment: FractionalOffset.centerLeft,
+              child: child,
+            ),
+          )
+        ],
+      ),
     );
   }
 }
