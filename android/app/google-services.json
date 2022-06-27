@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "240711889577",
+    "project_id": "abhi-firesome",
+    "storage_bucket": "abhi-firesome.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:240711889577:android:76eff698547ffbe6ee2fb8",
+        "android_client_info": {
+          "package_name": "com.abhi.portfolio.firefolio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "240711889577-c2utqsht9rjh88hv7gjcsp1itphdbhts.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCv5Zmh0EXHg1QflVzufeKO5v3EiE4hGUI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "240711889577-c2utqsht9rjh88hv7gjcsp1itphdbhts.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
