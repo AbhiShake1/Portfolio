@@ -1,5 +1,7 @@
 import 'package:firefolio/app/modules/home/controllers/home_controller.dart';
 import 'package:firefolio/app/routes/app_pages.dart';
+import 'package:firefolio/app/widgets/bouncing_text_widget.dart';
+import 'package:firefolio/extensions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mouse_parallax/mouse_parallax.dart';
@@ -49,6 +51,18 @@ class HomeView extends GetView<HomeController> {
                   size: 50,
                 ),
               ),
+            ),
+          ),
+          Align(
+            alignment: Alignment.center,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                'Hi,',
+                'I\'m Abhi',
+                'Flutter Developer',
+              ].map((e) => e.toBouncingTextWidgets()).toList(),
             ),
           ),
         ],
