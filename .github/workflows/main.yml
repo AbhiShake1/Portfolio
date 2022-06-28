@@ -6,12 +6,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout Repository
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v3
 
       # Install Flutter command
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2
         with:
-          channel: 'dev'
+          flutter-version: '3.1.0-0.0.pre.1360'
+          channel: 'master'
 
       # Build Website
       - name: Build Website
